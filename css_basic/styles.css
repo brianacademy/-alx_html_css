@@ -1,0 +1,22 @@
+body, main {
+  display: flex;
+}
+body {
+  flex-direction: column;
+}
+main {
+  flex-direction: row;
+  flex: auto;
+}
+p.logo {
+  font-size: larger;
+}
+article {
+  flex: 2;
+  overflow-y: auto;
+  border: 1px solid black;
+}
+aside {
+  flex: 1;
+  overflow-y: auto;
+}
