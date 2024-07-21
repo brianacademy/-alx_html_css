@@ -1,0 +1,425 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  font-family: "Source Sans 3", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  5. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  6. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+/*
+  7. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+/*
+  8. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+@font-face {
+  font-family: 'holberton_school-icon';
+  src:  url(/alx_html_css/headphones/assets/holberton_school-icon/fonts/holberton_school-icon.ttf);
+  src:  url(/alx_html_css/headphones/assets/holberton_school-icon/fonts/holberton_school-icon.ttf) format('embedded-opentype'),
+  url(/alx_html_css/headphones/assets/holberton_school-icon/fonts/holberton_school-icon.ttf),
+  url(/alx_html_css/headphones/assets/holberton_school-icon/fonts/holberton_school-icon.ttf) format('woff'),
+  url(/alx_html_css/headphones/assets/holberton_school-icon/fonts/holberton_school-icon.ttf) format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="holberton_school-icon-"], [class*=" holberton_school-icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'holberton_school-icon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.holberton_school-icon-arrow_1:before {
+  content: "\e900";
+}
+.holberton_school-icon-arrow_2:before {
+  content: "\e901";
+}
+.holberton_school-icon-arrow_3:before {
+  content: "\e902";
+}
+.holberton_school-icon-arrow_4:before {
+  content: "\e903";
+}
+.holberton_school-icon-arrow_5:before {
+  content: "\e904";
+}
+.holberton_school-icon-check:before {
+  content: "\e905";
+}
+.holberton_school-icon-ic_bag:before {
+  content: "\e906";
+}
+.holberton_school-icon-ic_cart:before {
+  content: "\e907";
+}
+.holberton_school-icon-ic_facebook:before {
+  content: "\e908";
+}
+.holberton_school-icon-ic_hearing:before {
+  content: "\e909";
+}
+.holberton_school-icon-ic_instagram:before {
+  content: "\e90a";
+}
+.holberton_school-icon-ic_laptop:before {
+  content: "\e90b";
+}
+.holberton_school-icon-ic_money:before {
+  content: "\e90c";
+}
+.holberton_school-icon-ic_music:before {
+  content: "\e90d";
+}
+.holberton_school-icon-ic_sound:before {
+  content: "\e90e";
+}
+.holberton_school-icon-ic_twitter:before {
+  content: "\e90f";
+}
+.holberton_school-icon-ic_video:before {
+  content: "\e910";
+}
+.holberton_school-icon-menu:before {
+  content: "\e911";
+}
+.holberton_school-icon-search_1:before {
+  content: "\e912";
+}
+.holberton_school-icon-search_2:before {
+  content: "\e913";
+}
+.holberton_school-icon-star:before {
+  content: "\e914";
+}
+
+
+/* We will begin with mobile first design */
+
+/* Styling the Header */
+header {
+  color: #fff;
+  background: url(/alx_html_css/headphones/assets/headphones_hero_1.jpg)
+              no-repeat scroll center;
+  background-size: cover;
+  padding: 0 1em; 
+}
+.header-container {
+  position: relative;
+}
+.logo {
+  display: flex;
+  justify-content: center;
+}
+.header-container img {
+  width: 160px;
+  padding-block: 1.5em;
+  
+}
+.nav-toggle {
+  display: none;
+}
+.nav-toggle-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  display: block;
+  background: #fff;
+  height: 2px;
+  width: 1.25em;
+  border-radius: 2px;
+  position: relative;
+}
+.nav-toggle-label span {
+  width: .95em;
+}
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  content: ''; 
+  position: absolute;
+}
+.nav-toggle-label span::before {
+  bottom: 7px;
+}
+.nav-toggle-label span::after {
+  top: 7px;
+  
+}
+
+nav {
+  position: absolute;
+  top: 100%;
+  left: 40%;
+  text-align: justify;
+  transform: scale(1, 0);
+  transform-origin: top;
+  transition: transform 400ms ease-in-out;
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+}
+nav li {
+  margin-bottom: 1.5em;
+}
+nav li a {
+  text-decoration: none;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+}
+nav li a:hover {
+  opacity: 0.9;
+}
+.nav-toggle:checked ~ nav {
+  transform: scale(1, 1);
+}
+
+.header-inner {
+  margin-top: 10em;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.header-inner h1 {
+  font-size: 2rem;
+  text-align: center;
+  line-height: 1.15;
+}
+.header-inner p:first-of-type {
+  font-size: 1rem;
+  font-weight: 900;
+  text-align: center;
+}
+.header-inner button {
+  background-color: #ff6565;
+  border: none;
+  color: #fff;
+  padding: .5em 1.75em;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 1rem;
+  margin: 2em 0 3em;
+  box-shadow: 0px 2px 20px rgba(0, 0, 0, .5);
+}
+.header-inner p:last-of-type {
+  text-align: center;
+  margin-bottom: 7em;
+  width: min(650px, 90%);
+}
+
+
+/* Styling what we do */
+.first-section {
+  background-color: #fff;
+  padding: 0 1em;
+}
+.title-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+}
+.title-text h1 {
+  margin-block: 4em 2em;
+  font-size: 2rem;
+  font-weight: 600;
+}
+.title-text p {
+  font-size: 1.25rem;
+  text-align: center;
+  width: min(800px, 90%);
+}
+
+.icon-text div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5em;
+}
+.icon-text p {
+  width: min(200px, 90%);
+  text-align: center;
+}
+.icon-text span {
+  font-size: 5em;
+  color: #ff6565;
+}
+.icon-text h3 {
+  font-weight: 600;
+  margin-block: 1em;
+}
+.icon-text p {
+  line-height: 1.75;
+  margin-bottom: 7em;
+}
+
+/* Styling results section */
+
+.second-section {
+  background: url(/alx_html_css/headphones/assets/headphones_hero_2.jpg) no-repeat;
+  background-color: #071629;
+  color: #fff;
+}
+.results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 7em 2em 3em; 
+}
+.results h3 {
+  font-weight: 500;
+  font-size: 2rem;
+  text-align: center;
+  line-height: 1.25;
+  margin-bottom: 2em;
+}
+.results p {
+  text-align: center;
+  margin-bottom: 6em;
+  width: min(650px, 90%);
+}
+.results-images {
+  position: relative;
+  color: #fff;
+  text-align: center;
+}
+.results-images img {
+  padding-bottom: 4em;
+  width: 190px;
+}
+.results-images h2 {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3.5rem;
+}
+.results-images p{
+  margin-bottom: 0;
+  font-size: .75rem;
+  position: absolute;
+  top: 58%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+/* Wider Screen Styling */
+
+@media only screen and (min-width: 600px) {
+  .icon-text, .shapes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .shapes {
+    column-gap: 5em;
+  }
+  .results-images h2 {
+    font-size: 2.75rem;
+  }
+  .results-images p {
+    font-size: .6rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  
+  .container-inner, .main-container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .nav-toggle-label {
+    display: none;
+  }
+  nav {
+    all: unset;
+  }
+  nav ul {
+    display: flex;
+    align-items: center;
+    margin-top: 1em;
+  }
+  nav li {
+    padding-left: 2em;
+  }
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .header-inner {
+    margin-top: 21em;
+  }
+  .header-inner button {
+    margin-block: 3em 5em;
+  }
+
+  /* What-we-do styling */
+  .icon-text  {
+    display: flex;
+  }
+
+  /* Results-styling */
+  .shapes{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 5em;
+  }
+}
